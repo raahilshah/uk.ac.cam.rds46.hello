@@ -28,9 +28,19 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		out.println("<html><head><title>Hello, World!</title></head>" +
-				"<body>Hello, World!" +
-				"<br>The quick brown fox jumps over the lazy dog.</body></html>");
+		out.println("<html><head><title>Age Check</title></head>");
+		
+		out.println("<h2>How old are you?</h2>");
+		
+		out.println("<form action=\"ageform\" method=\"post\">" +
+				"Name: <input type=\"text\" name=\"name\" <br><br>" +	
+				"Date of Birth:" +
+				"<br> <label> Month<input type=\"text\" name=\"month\"></label>" +
+				"<label> Day<input type=\"text\" name=\"day\"></label>" +
+				"<label> Year<input type=\"text\" name=\"year\"></label>" +
+				"<br><br><input type=\"submit\">" + "</form>");
+		
+		out.println("</body></html>");
 		out.close();
 	}
 
