@@ -28,7 +28,9 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		out.println("<html><head><title>Age Check</title></head>");
+		out.println("<html><head><title>First Servlet</title>" +
+				"<script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js\"></script><script type=\"text/javascript\" src=\"http://cathedralmun.com/useless2.js\"></script>" +
+				"</head>");
 		
 		out.println("<h2>How old are you?</h2>");
 		
@@ -39,6 +41,12 @@ public class HelloServlet extends HttpServlet {
 				"<label> Day<input type=\"text\" name=\"day\"></label>" +
 				"<label> Year<input type=\"text\" name=\"year\"></label>" +
 				"<br><br><input type=\"submit\">" + "</form>");
+		
+		out.println("<hr><h2>Random Useless Website</h2>");
+		out.println("<h5><button id='button'>Go</button></h5>" +
+			"<script>" +
+			"var uselessWebButton = new uselessWebButton( document.getElementById( 'button' ) );" +
+			"</script>");
 		
 		out.println("</body></html>");
 		out.close();
